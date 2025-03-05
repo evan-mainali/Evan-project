@@ -7,7 +7,6 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
 
-
         CurrentDate date = new CurrentDate();
 
         int year = date.getCurrentYear();
