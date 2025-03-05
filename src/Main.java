@@ -17,7 +17,7 @@ public class Main {
         monthcal.isleapyear();
         monthcal.convertintoMonth();
         monthcal.displayStartDay();
-        monthcal.displaymonthCalander();
+        monthcal.displaymonthCalenadr();
 
 
 
