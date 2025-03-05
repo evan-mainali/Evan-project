@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f09d89e3-993d-4bc4-b6f8-212f0823779b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrentDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Months.java" beforeDir="false" />
+    <list default="true" id="f09d89e3-993d-4bc4-b6f8-212f0823779b" name="Changes" comment="test initial push">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CurrentDate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Months.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/Months.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/Months.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,11 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -61,9 +65,9 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Reverting in master",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/evan/IdeaProjects/main",
+    "last_opened_file_path": "C:/Users/evan/IdeaProjects/main/test_initial_push.patch",
     "onboarding.tips.debug.path": "C:/Users/evan/IdeaProjects/main/src/Main.java",
     "settings.editor.selected.configurable": "settings.sync"
   }
@@ -121,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741212766781</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Revert &quot;test initial push&quot;&#10;&#10;This reverts commit 85b3c7f7">
+      <option name="closed" value="true" />
+      <created>1741212949733</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741212949733</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
