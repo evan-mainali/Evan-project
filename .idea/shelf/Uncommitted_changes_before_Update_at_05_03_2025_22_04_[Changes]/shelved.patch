@@ -1,0 +1,107 @@
+Index: src/Months.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.time.DayOfWeek;\r\nimport java.time.YearMonth;\r\nimport java.time.LocalDate;\r\npublic class Months extends  CurrentDate{\r\n\r\n    protected String[] months = {\"January\",\"Febuary\",\"March\",\"April\",\"May\",\"June\",\"July\",\"August\",\"September\",\"October\",\"November\",\"December\"};\r\n    protected String[][] monthcalendar= new String[7][5];\r\n    protected String[] days = {\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\",\"SATURDAY\",\"SUNDAY\"};\r\n\r\n\r\n    private int useryear;\r\n    private int month;\r\n    private int indexmonth;\r\n\r\n    Months(int year,int month){\r\n        useryear=year;\r\n        this.month=month;\r\n\r\n    }\r\n\r\n    String displayStartDay(){ // this method finds the value of the start day of January first e.g. Monday or Tuesday\r\n            YearMonth yearmonth = YearMonth.of(useryear,month);\r\n            LocalDate FirstDayofmonth = yearmonth.atDay(1);\r\n            DayOfWeek startday = FirstDayofmonth.getDayOfWeek();\r\n            return startday.toString();\r\n\r\n\r\n    }\r\n\r\n\r\n    String convertintoMonth(){\r\n        String Currentmonth = \"\";\r\n        indexmonth=month-1;\r\n        for(int i =0;i<months.length;i++){\r\n            if(i==indexmonth){\r\n                Currentmonth=months[i]; // this part of the program converts the index year into a month;\r\n            }\r\n        }\r\n        return Currentmonth;\r\n    }\r\n\r\n    boolean isleapyear(){\r\n\r\n\r\n        return (useryear%4==0) && (useryear%100!=0 || useryear%400==0);\r\n\r\n\r\n    }\r\n\r\n    void displaymonthCalander() { // this part of the program displays the current date day and month as a whole, the final process.\r\n\r\n            int max=0;\r\n\r\n\r\n            for(int i =0;i<months.length;i++){\r\n                if((i==3 || i== 5|| i==8 || i==10) && months[i].equals(convertintoMonth()) ){\r\n                    max=30;\r\n                }\r\n                else if((i== 0|| i==2|| i==4|| i==6||i==7||i==9||i==11) && months[i].equals(convertintoMonth())){\r\n                    max=31;\r\n                }\r\n                else if(isleapyear() && months[i].equals(convertintoMonth())){\r\n                    max=29;\r\n                }\r\n                else if(months[i].equals(convertintoMonth()) && i==1){\r\n                    max=28;\r\n                }\r\n\r\n            }\r\n        int index=0;\r\n\r\n        for(int i =0;i< days.length;i++){\r\n            if(days[i].equals(displayStartDay())){\r\n                index=i; // this part stores the index of the day of the week given by displaystartdate() function so we can use it for the print\r\n            }\r\n        }\r\n        for(int date =0;date<max;date++){\r\n            System.out.println(days[(date+index)%7]+\" \"+(date+1)+\" \"+convertintoMonth()+\" \"+useryear);\r\n        }\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n\r\n\r\n
+===================================================================
+diff --git a/src/Months.java b/src/Months.java
+--- a/src/Months.java	(revision 85b3c7f75e7906338a741d28add406514a2b3d95)
++++ b/src/Months.java	(date 1741206232458)
+@@ -4,10 +4,9 @@
+ public class Months extends  CurrentDate{
+ 
+     protected String[] months = {"January","Febuary","March","April","May","June","July","August","September","October","November","December"};
+-    protected String[][] monthcalendar= new String[7][5];
++    protected String[][] monthcalendar= new String[6][7];
+     protected String[] days = {"MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"};
+ 
+-
+     private int useryear;
+     private int month;
+     private int indexmonth;
+@@ -47,26 +46,10 @@
+ 
+     }
+ 
+-    void displaymonthCalander() { // this part of the program displays the current date day and month as a whole, the final process.
+-
+-            int max=0;
++    public String[][] generatemonthCalander() { // this part of the program displays the current date day and month as a whole, the final process.
+ 
++            int max=YearMonth.of(useryear, month).lengthOfMonth();
+ 
+-            for(int i =0;i<months.length;i++){
+-                if((i==3 || i== 5|| i==8 || i==10) && months[i].equals(convertintoMonth()) ){
+-                    max=30;
+-                }
+-                else if((i== 0|| i==2|| i==4|| i==6||i==7||i==9||i==11) && months[i].equals(convertintoMonth())){
+-                    max=31;
+-                }
+-                else if(isleapyear() && months[i].equals(convertintoMonth())){
+-                    max=29;
+-                }
+-                else if(months[i].equals(convertintoMonth()) && i==1){
+-                    max=28;
+-                }
+-
+-            }
+         int index=0;
+ 
+         for(int i =0;i< days.length;i++){
+@@ -74,23 +57,49 @@
+                 index=i; // this part stores the index of the day of the week given by displaystartdate() function so we can use it for the print
+             }
+         }
+-        for(int date =0;date<max;date++){
+-            System.out.println(days[(date+index)%7]+" "+(date+1)+" "+convertintoMonth()+" "+useryear);
+-        }
+-    }
++
++
++        int daycounter = 1;
++        for (int i = 0; i < 6; i++) { // Weeks (rows)
++            for (int j = 0; j < 7; j++) { // Days (columns)
++                if (i == 0 && j < index) {
++                    monthcalendar[i][j] = " "; // Empty spaces before start day
++                } else if (daycounter <= max) {
++                    monthcalendar[i][j] = String.valueOf(daycounter++);
++                } else {
++                    monthcalendar[i][j] = " "; // Empty spaces after last day
++                }
++            }
++        }
++        return monthcalendar;
+ 
+ 
++    }
+ 
++    public void displaymonthCalenadr() {
++        generatemonthCalander();
++        System.out.println(convertintoMonth()+" "+useryear);
+ 
++        for (String day : days) {
++            System.out.print(day.substring(0, 3) + " ");
++        }
++        System.out.println();
+ 
+-
+-
+-
++        for (int i = 0; i < 6; i++) { // Iterate over weeks (rows)
++            for (int j = 0; j < 7; j++) { // Iterate over days (columns)
++                if (monthcalendar[i][j] == null || monthcalendar[i][j].equals(" ")) {
++                    System.out.print("    "); // Print empty space for alignment
++                } else {
++                    System.out.printf("%3s ", monthcalendar[i][j]); // Print day with spacing
++                }
++            }
++            System.out.println(); // New line after each week
++        }
+ 
+ 
+ 
+ 
+-
++    }
+ 
+ }
+ 

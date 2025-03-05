@@ -7,6 +7,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
 
+
         CurrentDate date = new CurrentDate();
 
         int year = date.getCurrentYear();
@@ -16,7 +17,7 @@ public class Main {
         monthcal.isleapyear();
         monthcal.convertintoMonth();
         monthcal.displayStartDay();
-        monthcal.displaymonthCalenadr();
+        monthcal.displaymonthCalander();
 
 
 
