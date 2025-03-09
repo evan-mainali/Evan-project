@@ -47,7 +47,10 @@ public class Months extends  CurrentDate{
 
     }
 
-    void displaymonthCalander() { // this part of the program displays the current date day and month as a whole, the final process.
+    void makeMonthCalander() { // this part of the program displays the current date day and month as a whole, the final process.
+            isleapyear();
+            displayStartDay();
+
 
             int max=0;
 
@@ -77,6 +80,11 @@ public class Months extends  CurrentDate{
         for(int date =0;date<max;date++){
             System.out.println(days[(date+index)%7]+" "+(date+1)+" "+convertintoMonth()+" "+useryear);
         }
+    }
+
+
+    public String displayMonthCalendar(){
+        return "Hello";
     }
 
 

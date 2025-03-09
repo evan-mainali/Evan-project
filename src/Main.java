@@ -14,10 +14,8 @@ public class Main {
         int month = date.getCurrentMonth();
 
         Months monthcal = new Months(year,month);
-        monthcal.isleapyear();
-        monthcal.convertintoMonth();
-        monthcal.displayStartDay();
-        monthcal.displaymonthCalander();
+
+        monthcal.makeMonthCalander();
 
 
 
