@@ -15,7 +15,7 @@ public class Main {
 
         Months monthcal = new Months(year,month);
 
-        monthcal.makeMonthCalander();
+        monthcal.displayMonthCalendar();
 
 
 

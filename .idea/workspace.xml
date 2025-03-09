@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f09d89e3-993d-4bc4-b6f8-212f0823779b" name="Changes" comment="first push">
+    <list default="true" id="f09d89e3-993d-4bc4-b6f8-212f0823779b" name="Changes" comment="new push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/main/Months.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/Months.class" afterDir="false" />
@@ -138,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741213303551</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new push">
+      <option name="closed" value="true" />
+      <created>1741548682944</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741548682944</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,7 +166,8 @@
     <MESSAGE value="Test initial push" />
     <MESSAGE value="Revert &quot;test initial push&quot;&#10;&#10;This reverts commit 85b3c7f7" />
     <MESSAGE value="first push" />
-    <option name="LAST_COMMIT_MESSAGE" value="first push" />
+    <MESSAGE value="new push" />
+    <option name="LAST_COMMIT_MESSAGE" value="new push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

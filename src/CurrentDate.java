@@ -4,7 +4,7 @@ import java.time.DayOfWeek;
 
 
 public class CurrentDate {
-
+    private String Months[]={"JANUARY","FEBUARAY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"};
 
     protected DayOfWeek currentday;
     protected String date;
@@ -72,6 +72,8 @@ public class CurrentDate {
 
 
     }
+
+
 
 
 

@@ -3,89 +3,51 @@ import java.time.YearMonth;
 import java.time.LocalDate;
 public class Months extends  CurrentDate{
 
-    protected String[] months = {"January","Febuary","March","April","May","June","July","August","September","October","November","December"};
-    protected String[][] monthcalendar= new String[7][5];
-    protected String[] days = {"MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"};
-
-
-    private int useryear;
+    private static final String[] DAYS = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
+    private int year;
     private int month;
-    private int indexmonth;
+    private String[][] monthCalendar;
 
-    Months(int year,int month){
-        useryear=year;
-        this.month=month;
-
+    public Months(int year, int month) {
+        this.year = year;
+        this.month = month;
+        generateMonthCalendar();
     }
 
-    String displayStartDay(){ // this method finds the value of the start day of January first e.g. Monday or Tuesday
-            YearMonth yearmonth = YearMonth.of(useryear,month);
-            LocalDate FirstDayofmonth = yearmonth.atDay(1);
-            DayOfWeek startday = FirstDayofmonth.getDayOfWeek();
-            return startday.toString();
+    private void generateMonthCalendar() {
+        YearMonth yearMonth = YearMonth.of(year, month);
+        int daysInMonth = yearMonth.lengthOfMonth();
+        LocalDate firstDay = yearMonth.atDay(1);
+        DayOfWeek startDay = firstDay.getDayOfWeek();
 
+        monthCalendar = new String[6][7]; // Adjusted for weeks & possible extra row
+        int startIndex = startDay.getValue() % 7; // Convert Java's Monday=1 format
+        int dayCounter = 1;
 
-    }
-
-
-    String convertintoMonth(){
-        String Currentmonth = "";
-        indexmonth=month-1;
-        for(int i =0;i<months.length;i++){
-            if(i==indexmonth){
-                Currentmonth=months[i]; // this part of the program converts the index year into a month;
+        for (int row = 0; row < monthCalendar.length; row++) {
+            for (int col = 0; col < 7; col++) {
+                if (row == 0 && col < startIndex) {
+                    monthCalendar[row][col] = "  "; // Empty spots before first day
+                } else if (dayCounter <= daysInMonth) {
+                    monthCalendar[row][col] = String.format("%2d", dayCounter++);
+                } else {
+                    monthCalendar[row][col] = "  "; // Empty spots after last day
+                }
             }
         }
-        return Currentmonth;
     }
 
-    boolean isleapyear(){
-
-
-        return (useryear%4==0) && (useryear%100!=0 || useryear%400==0);
-
-
-    }
-
-    void makeMonthCalander() { // this part of the program displays the current date day and month as a whole, the final process.
-            isleapyear();
-            displayStartDay();
-
-
-            int max=0;
-
-
-            for(int i =0;i<months.length;i++){
-                if((i==3 || i== 5|| i==8 || i==10) && months[i].equals(convertintoMonth()) ){
-                    max=30;
-                }
-                else if((i== 0|| i==2|| i==4|| i==6||i==7||i==9||i==11) && months[i].equals(convertintoMonth())){
-                    max=31;
-                }
-                else if(isleapyear() && months[i].equals(convertintoMonth())){
-                    max=29;
-                }
-                else if(months[i].equals(convertintoMonth()) && i==1){
-                    max=28;
-                }
-
+    public void displayMonthCalendar() {
+        System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
+        for (String[] week : monthCalendar) {
+            for (String day : week) {
+                System.out.print(" " + day + " ");
             }
-        int index=0;
-
-        for(int i =0;i< days.length;i++){
-            if(days[i].equals(displayStartDay())){
-                index=i; // this part stores the index of the day of the week given by displaystartdate() function so we can use it for the print
-            }
-        }
-        for(int date =0;date<max;date++){
-            System.out.println(days[(date+index)%7]+" "+(date+1)+" "+convertintoMonth()+" "+useryear);
+            System.out.println();
         }
     }
 
 
-    public String displayMonthCalendar(){
-        return "Hello";
-    }
 
 
 
