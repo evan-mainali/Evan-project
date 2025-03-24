@@ -9,17 +9,14 @@ public class CurrentDate {
     protected DayOfWeek currentday;
     protected String date;
 
-    CurrentDate(){
+    public CurrentDate(){
         LocalDate currentdate = LocalDate.now();
         String date = currentdate.toString();
         currentday= currentdate.getDayOfWeek();
         this.date=date;
 
     }
-
-
-
-    int getCurrentday(){ // this method displays the day like Wedneday.
+    public int getCurrentday(){ // this method displays the day like Wedneday.
 
         int counter =0;
         String day="";
@@ -37,13 +34,14 @@ public class CurrentDate {
 
     }
 
-    int  getCurrentMonth(){ // this method gets the current month;
+
+    public  int getCurrentMonth(){ // this method gets the current month as an integer;
 
         int counter=0;
         int month=0;
         for(char c:date.toCharArray()){
 
-            if(c=='-'){
+            if(c=='-'){ // because this API displays day, month then year as a string seperated by a dash, helps us find the month.
                 counter++;
             }
             else if(counter==1){
@@ -55,13 +53,13 @@ public class CurrentDate {
     }
 
 
-    int getCurrentYear(){ // this method gets the current year
+    public int getCurrentYear(){ // this method gets the current year as an integer
         String year="";
         int counter=0;
 
         for(char c:date.toCharArray()){
 
-            if(c=='-') {
+            if(c=='-') { // same here.
                 counter++;
             }
             else if(counter==0){
@@ -69,7 +67,6 @@ public class CurrentDate {
             }
         }
         return Integer.parseInt(year);
-
 
     }
 

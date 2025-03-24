@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="cn.zhxu.okhttps.jackson" type="repository">
+    <properties maven-id="cn.zhxu:okhttps-jackson:4.0.1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/zhxu/okhttps-jackson/4.0.1/okhttps-jackson-4.0.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/cn/zhxu/okhttps/4.0.1/okhttps-4.0.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/cn/zhxu/data-core/1.5.2/data-core-1.5.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.14.9/okhttp-3.14.9.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.17.5/okio-1.17.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/cn/zhxu/data-jackson/1.5.2/data-jackson-1.5.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.14.1/jackson-databind-2.14.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.14.1/jackson-annotations-2.14.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.14.1/jackson-core-2.14.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

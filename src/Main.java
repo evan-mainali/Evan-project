@@ -9,13 +9,16 @@ public class Main {
 
 
         CurrentDate date = new CurrentDate();
-
         int year = date.getCurrentYear();
         int month = date.getCurrentMonth();
 
-        Months monthcal = new Months(year,month);
+        UserInfo user = new UserInfo();
+        Months check = new Months(year,month);
+        check.displayMonthCalendar();
 
-        monthcal.displayMonthCalendar();
+        user.askSleepHours();
+        user.askExcerciseHours();
+        System.out.println("program finished");
 
 
 
