@@ -9,12 +9,13 @@ import java.util.Scanner;
 public class UserInfo extends CurrentDate {
 
     protected String[] moodSelect = {"HAPPY", "SAD", "ANGRY", "OK"};
-    protected int month;
-    protected int year;
 
+    private String name;
+    private int age;
 
-    public UserInfo() {
-
+    public UserInfo(String name,int age) {
+        this.name=name;
+        this.age=age;
     }
 
 
@@ -70,21 +71,16 @@ public class UserInfo extends CurrentDate {
 
     public int askSleepHours(){ // asks how long you slept for, validating your hours in case of invalid data.
         int number;
-        System.out.println("Enter how long you slept last night");
+        System.out.print("Enter how long you slept last night ");
         Scanner input = new Scanner(System.in);
         while (true){
             if(input.hasNext()){
                 number = input.nextInt();
-                if(number>=3 && number<=12){
-                    break;
-                }
-                else{
-                    System.out.println("invalid sleep hour, enter a number between 3 and 12 inclusive "); // average sleep for humans is 3 to 12 hours;
-                }
+                break;
             }
             else{
                 System.out.print("try again, invalid ");
-                input.next();
+
             }
 
         }
@@ -105,22 +101,18 @@ public class UserInfo extends CurrentDate {
 
     public int askExcerciseHours(){
         int excerciseHour=0;
-        System.out.print("Enter how long you have excercised for today ");
-        Scanner input = new Scanner(System.in);
+
         while(true){
+            System.out.print("Enter how long you have excercised for today ");
+            Scanner input = new Scanner(System.in);
             if(input.hasNextInt()){
                 excerciseHour=input.nextInt();
-                if(excerciseHour>=0 && excerciseHour<=6){
-                    break;
-                }
-                else{
-                    System.out.print("Unrealistic excercise hour, try again ");
-                }
-
-
+                break;
             }
+
             else{
-                System.out.println("Invalid data, try again ");
+                System.out.println("Invalid data, try again");
+
             }
 
         }
@@ -146,7 +138,6 @@ public class UserInfo extends CurrentDate {
 
 
 }
-
 
 
 
