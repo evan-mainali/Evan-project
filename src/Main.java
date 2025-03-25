@@ -7,18 +7,13 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
 
-
         CurrentDate date = new CurrentDate();
+
         int year = date.getCurrentYear();
         int month = date.getCurrentMonth();
 
-        UserInfo user = new UserInfo();
-        Months check = new Months(year,month);
-        check.displayMonthCalendar();
+        Months monthcal = new Months(year,month);
 
-        user.askSleepHours();
-        user.askExcerciseHours();
-        System.out.println("program finished");
 
 
 
