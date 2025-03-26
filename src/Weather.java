@@ -9,10 +9,11 @@ public class Weather {
     Weather(){}
 
 
-    public void getWeather(){
-
+    public String getWeather(){ // returns the result of the weather API
+        String api="";
 
         try {
+
             String apiUrl = "https://api.weatherapi.com/v1/current.json?key=5e888cebd7084d2bbe5142331252503&q=London&aqi=no";
             URL url = new URL(apiUrl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -27,16 +28,15 @@ public class Weather {
             }
             reader.close();
 
-            // Print the API response
-            System.out.println("API Response: " + response.toString());
+            // stores the API response in the variable api
+            api = "API Response: " + response.toString();
 
 
         } catch (IOException e) {
             e.printStackTrace();
 
         }
-
-
+        return api; // returns the value of the API response.
 
     }
 }

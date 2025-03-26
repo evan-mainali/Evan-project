@@ -3,11 +3,12 @@ import java.time.YearMonth;
 import java.time.LocalDate;
 public class Months extends  CurrentDate{
 
-    private static final String[] DAYS = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
+    private static final String[] DAYS = {"MONDAY", "TUESDAY", "WEDNESDAY",
+            "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
     private int year;
     private int month;
-    private String[] months = {"JANUARY","FEBUARY","MARCH","APRIL","MAY","JUNE","JULY",
-    "AUGUST","SEPETMBER","OCTOBER","NOVEMBER","DECEMBER"};
+    private String[] months = {"JANUARY","FEBUARY","MARCH","APRIL","MAY","JUNE",
+            "JULY","AUGUST","SEPETMBER","OCTOBER","NOVEMBER","DECEMBER"};
     private String[][] monthCalendar;
 
     public Months(int year, int month) {

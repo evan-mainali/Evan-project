@@ -54,18 +54,19 @@ public class UserInfo extends CurrentDate {
     }
 
 
-    public void storeUserInfo() {// writes the private methods in a file
+    public String storeMood() {// writes the private methods in a file
+        String mood=" ";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("UserInfo.txt", true))) {
             int currentDate = getCurrentday();
             int currentYear = getCurrentYear();
-            String mood = askMood();
+            mood = askMood();
 
             writer.write(currentDate + " " + currentYear + " " + mood);
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+    return mood;
 
     }
 
@@ -86,7 +87,7 @@ public class UserInfo extends CurrentDate {
         }
         try { // this part of the program stores the sleep hours into a file
             BufferedWriter writer = new BufferedWriter(new FileWriter("SleepHours.txt",true));
-            writer.write(String.valueOf(number));
+            writer.write(String.valueOf(number)+"hours" + " "+getCurrentday()+" "+getCurrentMonth()+" "+getCurrentYear());
             writer.newLine();
             writer.close();
         }
@@ -118,7 +119,7 @@ public class UserInfo extends CurrentDate {
         }
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Excercise.txt", true)); // stores excercise hour in a file
-            writer.write(String.valueOf(excerciseHour));
+            writer.write(String.valueOf(excerciseHour)+"hours"+" "+getCurrentday()+" "+getCurrentYear()+" "+getCurrentMonth());
             writer.newLine();
             writer.close();
         }
@@ -128,6 +129,14 @@ public class UserInfo extends CurrentDate {
         }
 
         return excerciseHour;
+
+
+    }
+    public String getapiWeather(){
+
+        Weather weather = new Weather();
+        return weather.getWeather();
+
 
 
     }
