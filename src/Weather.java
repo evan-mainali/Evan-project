@@ -29,7 +29,7 @@ public class Weather {
             reader.close();
 
             // stores the API response in the variable api
-            api = "API Response: " + response.toString();
+            api = "API Response: " + response;
 
 
         } catch (IOException e) {
